@@ -15,7 +15,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 Latest and greatest!
 
 ```
-$ brew install homebrew/dupes/nano
+$ brew install nano
 $ echo "include /usr/local/share/nano/*.nanorc" > ~/.nanorc
 ```
 restart terminal and walla!
