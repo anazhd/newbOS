@@ -39,3 +39,27 @@ $ brew upgrade
 ```
 $ brew upgrade <formula>
 ```
+
+## Disk Utility Is Stupid
+Be less stupid with a quick fix for simple task. Don't be like apple making the weird mediakit thing broken, can't do anything with drive (except on rare occasion). Disk Utility works 1 out 100 times.
+
+### List Disk
+```
+diskutil list
+```
+
+### Force Unmount
+```
+diskutil unmountDisk force diskX
+```
+
+### Zero the boot sector
+```
+sudo dd if=/dev/zero of=/dev/diskX bs=1024 count=1024
+```
+
+### Partition It
+```
+diskutil partitionDisk diskX GPT <TYPE> "My External HD" 0g
+```
+type can be JHFS+, APFS, and I don't know what else. I just use APFS
