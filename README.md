@@ -43,23 +43,30 @@ $ brew upgrade <formula>
 ## Disk Utility Is Stupid
 Be less stupid with a quick fix for simple task. Don't be like apple making the weird mediakit thing broken, can't do anything with drive (except on rare occasion). Disk Utility works 1 out 100 times.
 
-### List Disk
+### Format External Disk Drive
 ```
 diskutil list
 ```
-
-### Force Unmount
+unmount it? IDK
 ```
 diskutil unmountDisk force diskX
 ```
-
-### Zero the boot sector
+now do this dirty job. or you can try eraseDisk (refer USB format part down here, I'm not sure, don't have spare drive to try)
 ```
 sudo dd if=/dev/zero of=/dev/diskX bs=1024 count=1024
 ```
-
-### Partition It
+partition it? type can be JHFS+, APFS, and I don't know what else. I just use APFS
 ```
 diskutil partitionDisk diskX GPT <TYPE> "My External HD" 0g
 ```
-type can be JHFS+, APFS, and I don't know what else. I just use APFS
+
+
+### Format USB Drive to EXFAT, etc
+Perhaps you just want to format your drive?
+```
+diskutil list
+```
+and then do the dirty job
+```
+diskutil eraseDisk EXFAT stupiddrivename /dev/diskX
+```
