@@ -62,7 +62,7 @@ diskutil partitionDisk diskX GPT <TYPE> "My External HD" 0g
 
 
 ### Format USB Drive to EXFAT, etc
-Perhaps you just want to format your drive?
+Perhaps you just want to format your usb drive (the fking pendrive)?
 ```
 diskutil list
 ```
